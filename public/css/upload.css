@@ -1,0 +1,13 @@
+div.upload-panel{
+	border: #b69e40 4px;
+	width: 100%;
+	min-height: 100px;
+	border:dashed 4px #ccc;
+}
+.progress-name{
+	width:100%;
+	text-align: center;
+}
+.progress-value{
+	position:absolute;
+}
