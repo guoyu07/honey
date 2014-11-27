@@ -11,7 +11,7 @@ jQuery(document).ready(function($) {
         var target = $('#' + prefix + file.id, jqProgressParent);
         if(target.length === 1){
             if(file.percent == 100){
-                $('.progress-value', target).html(file.percent + '%').hide(2000);
+                $('.progress-value', target).html(file.percent + '%').fadeOut(2000);
             }else{
                 $('.progress-value', target).html(file.percent + '%');
             }    
