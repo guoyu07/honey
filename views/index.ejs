@@ -27,23 +27,9 @@
 <script src="js/lib/ejs.js" type="text/javascript"></script>
 
 <script src="js/templatemo_custom.js"></script>
-<script src="js/upload.js"></script>
-
 <script src="js/lib/qiniu.js" type="text/javascript"></script>
 
-<script>
-		function showhide()
-		{
-			var div = document.getElementById("newpost");
-		if (div.style.display !== "none")
-		{
-			div.style.display = "none";
-		}
-		else {
-			div.style.display = "block";
-		}
-		}
-		</script>
+<script src="js/index.js"></script>
 
 </head>
 <body>
@@ -97,8 +83,170 @@
 <!-- /.site-header -->
 <div id="menu-container">
 	<!-- gallery start -->
+	<div id="gallery-tpl" class="hidden">
+		<div id="gallery-tpl-container">
+			<div class="container gallery-container">
+				<div class="row templatemorow">
+				</div>
+			</div>
+		</div>
+		<div id="gallery-tpl-nest1">
+			<div class="hex col-sm-6">
+				<div>
+					<div class="hexagon hexagon2 gallery-item">
+						<div class="hexagon-in1">
+							<div class="hexagon-in2" style="background-image: url('[%=src%]');">
+								<div class="overlay">
+									<a href="[%=src%]" data-rel="lightbox">
+										<image class="expand" src="images/fit_to_width.png"/>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="gallery-tpl-nest2">
+			<div class="hex col-sm-6">
+				<div>
+					<div class="hexagon hexagon2 gallery-item">
+						<div class="hexagon-in1">
+							<div class="hexagon-in2" style="background-image: url('[%=src%]');">
+								<div class="overlay">
+									<a href="[%=src%]" data-rel="lightbox">
+										<image class="expand" src="images/fit_to_width.png"/>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="gallery-tpl-nest3">
+			<div class="hex col-sm-6  templatemo-hex-top2">
+				<div>
+					<div class="hexagon hexagon2 gallery-item">
+						<div class="hexagon-in1">
+							<div class="hexagon-in2" style="background-image: url('[%=src%]');">
+								<div class="overlay">
+									<a href="[%=src%]" data-rel="lightbox">
+										<image class="expand" src="images/fit_to_width.png"/>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="gallery-tpl-nest4">
+			<div class="hex col-sm-6  templatemo-hex-top3">
+				<div>
+					<div class="hexagon hexagon2 gallery-item">
+						<div class="hexagon-in1">
+							<div class="hexagon-in2" style="background-image: url('[%=src%]');">
+								<div class="overlay">
+									<a href="[%=src%]" data-rel="lightbox">
+										<image class="expand" src="images/fit_to_width.png"/>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="gallery-tpl-nest5">
+			<div class="hex col-sm-6  templatemo-hex-top3">
+				<div>
+					<div class="hexagon hexagon2 gallery-item">
+						<div class="hexagon-in1">
+							<div class="hexagon-in2" style="background-image: url('[%=src%]');">
+								<div class="overlay">
+									<a href="[%=src%]" data-rel="lightbox">
+										<image class="expand" src="images/fit_to_width.png"/>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="gallery-tpl-nest6">
+			<div class="hex col-sm-6 hex-offset templatemo-hex-top1 templatemo-hex-top2">
+				<div>
+					<div class="hexagon hexagon2 gallery-item">
+						<div class="hexagon-in1">
+							<div class="hexagon-in2" style="background-image: url('[%=src%]');">
+								<div class="overlay">
+									<a href="[%=src%]" data-rel="lightbox">
+										<image class="expand" src="images/fit_to_width.png"/>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="gallery-tpl-nest7">
+			<div class="hex col-sm-6 templatemo-hex-top1 templatemo-hex-top3">
+				<div>
+					<div class="hexagon hexagon2 gallery-item">
+						<div class="hexagon-in1">
+							<div class="hexagon-in2" style="background-image: url('[%=src%]');">
+								<div class="overlay">
+									<a href="[%=src%]" data-rel="lightbox">
+										<image class="expand" src="images/fit_to_width.png"/>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="gallery-tpl-nest8">
+			<div class="hex col-sm-6 templatemo-hex-top1  templatemo-hex-top3">
+				<div>
+					<div class="hexagon hexagon2 gallery-item">
+						<div class="hexagon-in1">
+							<div class="hexagon-in2" style="background-image: url('[%=src%]');">
+								<div class="overlay">
+									<a href="[%=src%]" data-rel="lightbox">
+										<image class="expand" src="images/fit_to_width.png"/>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="gallery-tpl-nest9">
+			<div class="hex col-sm-6 templatemo-hex-top1  templatemo-hex-top2">
+				<div>
+					<div class="hexagon hexagon2 gallery-item">
+						<div class="hexagon-in1">
+							<div class="hexagon-in2" style="background-image: url('[%=src%]');">
+								<div class="overlay">
+									<a href="[%=src%]" data-rel="lightbox">
+										<image class="expand" src="images/fit_to_width.png"/>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+		
 	<div class="content homepage" id="menu-1">
-		<div class="container">
+		<div class="container gallery-container">
 			<div class="row templatemorow">
 				<div class="hex col-sm-6">
 					<div>
@@ -237,7 +385,7 @@
 				</div>
 			</div>
 		</div>
-		<div  id="newpost" style="display:none;" class="container answer_list templatemo_gallerytop">
+		<div class="container answer_list templatemo_gallerytop gallery-container">
 			<div class="row templatemorow">
 				<div class="hex col-sm-6">
 					<div>
@@ -376,10 +524,13 @@
 				</div>
 			</div>
 		</div>
+
+		<div id="newNest"></div>
+		
 		<div class="container">
 			<div class="row">
 				<div class="templatemo_loadmore">
-					<button class="gallery_more" id="button" onClick="showhide()">加载更多</button>
+					<button class="gallery_more" id="load_more">加载更多</button>
 				</div>
 			</div>
 		</div>
@@ -428,8 +579,9 @@
 
 		</div>
 	</div>
+	<!-- uoload end -->
 </div>
-<!-- uoload end -->
+
 <!-- footer start -->
 <div class="templatemo_footer">
 	<div class="container">
@@ -462,16 +614,5 @@
 </div>
 
 <!-- footer end -->
-<script>
-	$('.gallery_more').click(function(){
-		var $this = $(this);
-		$this.toggleClass('gallery_more');
-		if($this.hasClass('gallery_more')){
-			$this.text('加载更多');      
-		} else {
-			$this.text('加载更少');
-		}
-	});
-		</script>
 </body>
 </html>

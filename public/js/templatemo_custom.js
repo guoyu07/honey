@@ -62,5 +62,6 @@ jQuery(document).ready(function($) {
 		$('.responsive_menu').hide();
 	});
 
+	/************** load more ********************/
 	
 });
