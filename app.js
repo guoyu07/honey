@@ -30,7 +30,7 @@ app.use(session({
     }),
     secret: 'Honey-candy',
     resave: true,
-    saveUninitialized: false
+    //saveUninitialized: false
 }));
 app.use(express.static(path.join(__dirname, 'public')));
 

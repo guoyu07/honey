@@ -86,7 +86,7 @@ jQuery(document).ready(function($) {
                 plupload.each(files, function(file) {
                     // 文件添加进队列后,处理相关的事情
                     console.log('file added');
-                    funcs.updateProgress(file, progressParent);
+                    funcs.updateProgress(file, jqels.progressParent);
                 });
             },
             'BeforeUpload': function(up, file) {
@@ -96,7 +96,7 @@ jQuery(document).ready(function($) {
             'UploadProgress': function(up, file) {
                 // 每个文件上传时,处理相关的事情
                 // console.log('when file upload');
-                funcs.updateProgress(file, progressParent);
+                funcs.updateProgress(file, jqels.progressParent);
             },
             'FileUploaded': function(up, file, info) {
                 // 每个文件上传成功后,处理相关的事情
@@ -124,7 +124,7 @@ jQuery(document).ready(function($) {
 
                 file.src = sourceLink;
                 file.thumbnail = thumbnailLink;
-                funcs.updateProgress(file, progressParent);
+                funcs.updateProgress(file, jqels.progressParent);
             },
             'Error': function(up, err, errTip) {
                 console.log('error:' + errTip);
