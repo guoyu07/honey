@@ -163,7 +163,7 @@ jQuery(document).ready(function($) {
             text: tpls.galleryTplNest[index],
             type: '['
         }).render({
-            src: vars.domain + '/' + item.key,
+            src: vars.domain + '/' + item.key + '?imageView2/2/h/' + Math.round(screen.availHeight * 0.85) + '/interlace/1',
             thumbnail: vars.domain + '/' + item.key + '?imageView2/1/w/500/h/500'
         });
         $('div.row', lastGalleryContainer).append(html);
