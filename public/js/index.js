@@ -183,6 +183,7 @@ jQuery(document).ready(function($) {
             }
         } else {
             lastGalleryContainer = funcs.addGalleryContainer();
+            funcs.addNest(lastGalleryContainer, item, 1);
         }
 
         return lastGalleryContainer;
@@ -224,6 +225,7 @@ jQuery(document).ready(function($) {
             success: function(data) {
                 if (data.error) {
                     console.log('加载图片出错：' + data.error);
+                    jqels.loadMore.html('加载更多');
                 } else {
                     if ($.isArray(data.items)) {
                         funcs.addImages(data.items);

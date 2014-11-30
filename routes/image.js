@@ -12,7 +12,7 @@ router.get('/load', function(req, res) {
     limit = req.param('limit');
     marker = req.param('imageMarker');
     if (limit === undefined) {
-        limit = 5;
+        limit = 9;
     }    
     if (marker === undefined || marker == '') {
         marker = null;
