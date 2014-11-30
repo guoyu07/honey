@@ -83,6 +83,7 @@
 <!-- /.site-header -->
 <div id="menu-container">
 	<!-- gallery start -->
+	<input type="hidden" name="imageMarker" id="imageMarker" value=""/>
 	<div id="gallery-tpl" class="hidden">
 		<div id="gallery-tpl-container">
 			<div class="container gallery-container">
@@ -95,7 +96,7 @@
 				<div>
 					<div class="hexagon hexagon2 gallery-item">
 						<div class="hexagon-in1">
-							<div class="hexagon-in2" style="background-image: url('[%=src%]');">
+							<div class="hexagon-in2" style="background-image: url('[%=thumbnail%]');">
 								<div class="overlay">
 									<a href="[%=src%]" data-rel="lightbox">
 										<image class="expand" src="images/fit_to_width.png"/>
@@ -112,7 +113,7 @@
 				<div>
 					<div class="hexagon hexagon2 gallery-item">
 						<div class="hexagon-in1">
-							<div class="hexagon-in2" style="background-image: url('[%=src%]');">
+							<div class="hexagon-in2" style="background-image: url('[%=thumbnail%]');">
 								<div class="overlay">
 									<a href="[%=src%]" data-rel="lightbox">
 										<image class="expand" src="images/fit_to_width.png"/>
@@ -129,7 +130,7 @@
 				<div>
 					<div class="hexagon hexagon2 gallery-item">
 						<div class="hexagon-in1">
-							<div class="hexagon-in2" style="background-image: url('[%=src%]');">
+							<div class="hexagon-in2" style="background-image: url('[%=thumbnail%]');">
 								<div class="overlay">
 									<a href="[%=src%]" data-rel="lightbox">
 										<image class="expand" src="images/fit_to_width.png"/>
@@ -146,7 +147,7 @@
 				<div>
 					<div class="hexagon hexagon2 gallery-item">
 						<div class="hexagon-in1">
-							<div class="hexagon-in2" style="background-image: url('[%=src%]');">
+							<div class="hexagon-in2" style="background-image: url('[%=thumbnail%]');">
 								<div class="overlay">
 									<a href="[%=src%]" data-rel="lightbox">
 										<image class="expand" src="images/fit_to_width.png"/>
@@ -163,7 +164,7 @@
 				<div>
 					<div class="hexagon hexagon2 gallery-item">
 						<div class="hexagon-in1">
-							<div class="hexagon-in2" style="background-image: url('[%=src%]');">
+							<div class="hexagon-in2" style="background-image: url('[%=thumbnail%]');">
 								<div class="overlay">
 									<a href="[%=src%]" data-rel="lightbox">
 										<image class="expand" src="images/fit_to_width.png"/>
@@ -180,7 +181,7 @@
 				<div>
 					<div class="hexagon hexagon2 gallery-item">
 						<div class="hexagon-in1">
-							<div class="hexagon-in2" style="background-image: url('[%=src%]');">
+							<div class="hexagon-in2" style="background-image: url('[%=thumbnail%]');">
 								<div class="overlay">
 									<a href="[%=src%]" data-rel="lightbox">
 										<image class="expand" src="images/fit_to_width.png"/>
@@ -197,7 +198,7 @@
 				<div>
 					<div class="hexagon hexagon2 gallery-item">
 						<div class="hexagon-in1">
-							<div class="hexagon-in2" style="background-image: url('[%=src%]');">
+							<div class="hexagon-in2" style="background-image: url('[%=thumbnail%]');">
 								<div class="overlay">
 									<a href="[%=src%]" data-rel="lightbox">
 										<image class="expand" src="images/fit_to_width.png"/>
@@ -214,7 +215,7 @@
 				<div>
 					<div class="hexagon hexagon2 gallery-item">
 						<div class="hexagon-in1">
-							<div class="hexagon-in2" style="background-image: url('[%=src%]');">
+							<div class="hexagon-in2" style="background-image: url('[%=thumbnail%]');">
 								<div class="overlay">
 									<a href="[%=src%]" data-rel="lightbox">
 										<image class="expand" src="images/fit_to_width.png"/>
@@ -231,7 +232,7 @@
 				<div>
 					<div class="hexagon hexagon2 gallery-item">
 						<div class="hexagon-in1">
-							<div class="hexagon-in2" style="background-image: url('[%=src%]');">
+							<div class="hexagon-in2" style="background-image: url('[%=thumbnail%]');">
 								<div class="overlay">
 									<a href="[%=src%]" data-rel="lightbox">
 										<image class="expand" src="images/fit_to_width.png"/>
@@ -246,285 +247,6 @@
 	</div>
 		
 	<div class="content homepage" id="menu-1">
-		<div class="container gallery-container">
-			<div class="row templatemorow">
-				<div class="hex col-sm-6">
-					<div>
-						<div class="hexagon hexagon2 gallery-item">
-							<div class="hexagon-in1">
-								<div class="hexagon-in2" style="background-image: url(images/gallery/1.jpg);">
-									<div class="overlay text-center">
-										<a href="images/gallery/1.jpg" data-rel="lightbox">
-											<image class="expand" src="images/fit_to_width.png"/>
-										</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="hex col-sm-6">
-					<div>
-						<div class="hexagon hexagon2 gallery-item">
-							<div class="hexagon-in1">
-								<div class="hexagon-in2" style="background-image: url(images/gallery/2.jpg);">
-									<div class="overlay">
-										<a href="images/gallery/2.jpg" data-rel="lightbox">
-											<image class="expand" src="images/fit_to_width.png"/>
-										</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="hex col-sm-6  templatemo-hex-top2">
-					<div>
-						<div class="hexagon hexagon2 gallery-item">
-							<div class="hexagon-in1">
-								<div class="hexagon-in2" style="background-image: url(images/gallery/3.jpg);">
-									<div class="overlay">
-										<a href="images/gallery/3.jpg" data-rel="lightbox">
-											<image class="expand" src="images/fit_to_width.png"/>
-										</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="hex col-sm-6  templatemo-hex-top3">
-					<div>
-						<div class="hexagon hexagon2 gallery-item">
-							<div class="hexagon-in1">
-								<div class="hexagon-in2" style="background-image: url(images/gallery/4.jpg);">
-									<div class="overlay">
-										<a href="images/gallery/4.jpg" data-rel="lightbox">
-											<image class="expand" src="images/fit_to_width.png"/>
-										</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="hex col-sm-6  templatemo-hex-top3">
-					<div>
-						<div class="hexagon hexagon2 gallery-item">
-							<div class="hexagon-in1">
-								<div class="hexagon-in2" style="background-image: url(images/gallery/5.jpg);">
-									<div class="overlay">
-										<a href="images/gallery/5.jpg" data-rel="lightbox">
-											<image class="expand" src="images/fit_to_width.png"/>
-										</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="hex col-sm-6 hex-offset templatemo-hex-top1 templatemo-hex-top2">
-					<div>
-						<div class="hexagon hexagon2 gallery-item">
-							<div class="hexagon-in1">
-								<div class="hexagon-in2" style="background-image: url(images/gallery/6.jpg);">
-									<div class="overlay">
-										<a href="images/gallery/6.jpg" data-rel="lightbox">
-											<image class="expand" src="images/fit_to_width.png"/>
-										</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="hex col-sm-6 templatemo-hex-top1 templatemo-hex-top3">
-					<div>
-						<div class="hexagon hexagon2 gallery-item">
-							<div class="hexagon-in1">
-								<div class="hexagon-in2" style="background-image: url(images/gallery/7.jpg);">
-									<div class="overlay">
-										<a href="images/gallery/7.jpg" data-rel="lightbox">
-											<image class="expand" src="images/fit_to_width.png"/>
-										</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="hex col-sm-6 templatemo-hex-top1  templatemo-hex-top3">
-					<div>
-						<div class="hexagon hexagon2 gallery-item">
-							<div class="hexagon-in1">
-								<div class="hexagon-in2" style="background-image: url(images/gallery/8.jpg);">
-									<div class="overlay">
-										<a href="images/gallery/8.jpg" data-rel="lightbox">
-											<image class="expand" src="images/fit_to_width.png"/>
-										</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="hex col-sm-6 templatemo-hex-top1  templatemo-hex-top2">
-					<div>
-						<div class="hexagon hexagon2 gallery-item">
-							<div class="hexagon-in1">
-								<div class="hexagon-in2" style="background-image: url(images/gallery/9.jpg);">
-									<div class="overlay">
-										<a href="images/gallery/9.jpg" data-rel="lightbox">
-											<image class="expand" src="images/fit_to_width.png"/>
-										</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="container answer_list templatemo_gallerytop gallery-container">
-			<div class="row templatemorow">
-				<div class="hex col-sm-6">
-					<div>
-						<div class="hexagon hexagon2 gallery-item">
-							<div class="hexagon-in1">
-								<div class="hexagon-in2" style="background-image: url(images/gallery/10.jpg);">
-									<div class="overlay">
-										<a href="images/gallery/10.jpg" data-rel="lightbox">
-											<image class="expand" src="images/fit_to_width.png"/>
-										</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="hex col-sm-6">
-					<div>
-						<div class="hexagon hexagon2 gallery-item">
-							<div class="hexagon-in1">
-								<div class="hexagon-in2" style="background-image: url(images/gallery/11.jpg);">
-									<div class="overlay">
-										<a href="images/gallery/11.jpg" data-rel="lightbox">
-											<image class="expand" src="images/fit_to_width.png"/>
-										</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="hex col-sm-6  templatemo-hex-top2">
-					<div>
-						<div class="hexagon hexagon2 gallery-item">
-							<div class="hexagon-in1">
-								<div class="hexagon-in2" style="background-image: url(images/gallery/12.jpg);">
-									<div class="overlay">
-										<a href="images/gallery/12.jpg" data-rel="lightbox">
-											<image class="expand" src="images/fit_to_width.png"/>
-										</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="hex col-sm-6  templatemo-hex-top3">
-					<div>
-						<div class="hexagon hexagon2 gallery-item">
-							<div class="hexagon-in1">
-								<div class="hexagon-in2" style="background-image: url(images/gallery/13.jpg);">
-									<div class="overlay">
-										<a href="images/gallery/13.jpg" data-rel="lightbox">
-											<image class="expand" src="images/fit_to_width.png"/>
-										</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="hex col-sm-6  templatemo-hex-top3">
-					<div>
-						<div class="hexagon hexagon2 gallery-item">
-							<div class="hexagon-in1">
-								<div class="hexagon-in2" style="background-image: url(images/gallery/14.jpg);">
-									<div class="overlay">
-										<a href="images/gallery/14.jpg" data-rel="lightbox">
-											<image class="expand" src="images/fit_to_width.png"/>
-										</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="hex col-sm-6 hex-offset templatemo-hex-top1 templatemo-hex-top2">
-					<div>
-						<div class="hexagon hexagon2 gallery-item">
-							<div class="hexagon-in1">
-								<div class="hexagon-in2" style="background-image: url(images/gallery/15.jpg);">
-									<div class="overlay">
-										<a href="images/gallery/15.jpg" data-rel="lightbox">
-											<image class="expand" src="images/fit_to_width.png"/>
-										</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="hex col-sm-6 templatemo-hex-top1 templatemo-hex-top3">
-					<div>
-						<div class="hexagon hexagon2 gallery-item">
-							<div class="hexagon-in1">
-								<div class="hexagon-in2" style="background-image: url(images/gallery/16.jpg);">
-									<div class="overlay">
-										<a href="images/gallery/16.jpg" data-rel="lightbox">
-											<image class="expand" src="images/fit_to_width.png"/>
-										</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="hex col-sm-6 templatemo-hex-top1  templatemo-hex-top3">
-					<div>
-						<div class="hexagon hexagon2 gallery-item">
-							<div class="hexagon-in1">
-								<div class="hexagon-in2" style="background-image: url(images/gallery/17.jpg);">
-									<div class="overlay">
-										<a href="images/gallery/17.jpg" data-rel="lightbox">
-											<image class="expand" src="images/fit_to_width.png"/>
-										</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="hex col-sm-6 templatemo-hex-top1  templatemo-hex-top2">
-					<div>
-						<div class="hexagon hexagon2 gallery-item">
-							<div class="hexagon-in1">
-								<div class="hexagon-in2" style="background-image: url(images/gallery/18.jpg);">
-									<div class="overlay">
-										<a href="images/gallery/18.jpg" data-rel="lightbox">
-											<image class="expand" src="images/fit_to_width.png"/>
-										</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
 		<div id="newNest"></div>
 		
 		<div class="container">
@@ -588,7 +310,27 @@
 		<div class="row">
 			<div class="col-md-9 col-sm-12">Copyright &copy; 2014 Honey</div>
 			<div class="col-md-3 col-sm-12 templatemo_rfooter">
-				<a href="#">
+				<script>
+				window._bd_share_config = {
+					"common": {
+						"bdSnsKey": {},
+						"bdText": "",
+						"bdMini": "2",
+						"bdMiniList": ["qzone", "tsina", "weixin"],
+						"bdPic": "",
+						"bdStyle": "0",
+						"bdSize": "32"
+					},
+					"slide": {
+						"type": "slide",
+						"bdImg": "2",
+						"bdPos": "right",
+						"bdTop": "135"
+					}
+				};
+				with(document)0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];
+				</script>
+				<!-- <a href="#">
 					<div class="hex_footer">
 						<span class="fa fa-weibo"></span>
 					</div>
@@ -607,7 +349,7 @@
 					<div class="hex_footer">
 						<span class="fa fa-html5"></span>
 					</div>
-				</a>
+				</a> -->
 			</div>
 		</div>
 	</div>

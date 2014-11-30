@@ -9,12 +9,14 @@ jQuery(document).ready(function($) {
     var funcs = {};
 
     funcs.init = function() {
+        vars.imageLimit = 9;//每次加载图片的数量
         vars.domain = $('#domain').val();
         vars.uptokenUrl = $('#uptoken_url').val();
 
         jqels.progressParent = $('#upload-progress');
         jqels.newNest = $('#newNest');
         jqels.loadMore = $('#load_more');
+        jqels.imageMarker = $('#imageMarker');
 
         tpls.galleryTplContainer = $('#gallery-tpl-container').html();
         tpls.galleryTplNest = [];
@@ -110,11 +112,9 @@ jQuery(document).ready(function($) {
                 var res = $.parseJSON(info);
 
                 var thumbnailLink = Qiniu.imageView2({
-                    mode: 3, // 缩略模式，共6种[0-5]
-                    w: 100, // 具体含义由缩略模式决定
-                    h: 100, // 具体含义由缩略模式决定
-                    q: 100, // 新图的图像质量，取值范围：1-100
-                    format: 'png' // 新图的输出格式，取值范围：jpg，gif，png，webp等
+                    mode: 1, // 缩略模式，共6种[0-5]
+                    w: 171, // 具体含义由缩略模式决定
+                    h: 180, // 具体含义由缩略模式决定
                 }, res.key);
 
 
@@ -125,6 +125,8 @@ jQuery(document).ready(function($) {
                 file.src = sourceLink;
                 file.thumbnail = thumbnailLink;
                 funcs.updateProgress(file, jqels.progressParent);
+
+                funcs.addImages([{key: res.key}]);
             },
             'Error': function(up, err, errTip) {
                 console.log('error:' + errTip);
@@ -138,7 +140,7 @@ jQuery(document).ready(function($) {
                 // 该配置必须要在 unique_names: false , save_key: false 时才生效
                 var key = "image_" + plupload.guid();
                 // do something with key here
-                return key
+                return key;
             }
         }
     });
@@ -161,7 +163,8 @@ jQuery(document).ready(function($) {
             text: tpls.galleryTplNest[index],
             type: '['
         }).render({
-            src: vars.domain + '/' + item.key
+            src: vars.domain + '/' + item.key,
+            thumbnail: vars.domain + '/' + item.key + '?imageView2/1/w/500/h/500'
         });
         $('div.row', lastGalleryContainer).append(html);
     }
@@ -189,7 +192,7 @@ jQuery(document).ready(function($) {
         if ($.isArray(items) && items.length > 0) {
             var lastGalleryContainer = funcs.lastGalleryContainer();
             for (var i in items) {
-                lastGalleryContainer = funcs.addImage(lastGalleryContainer, items[i]);                
+                lastGalleryContainer = funcs.addImage(lastGalleryContainer, items[i]);
             };
             funcs.effect();
         }
@@ -206,38 +209,55 @@ jQuery(document).ready(function($) {
                 $(this).find('.overlay').removeClass('animated fadeIn').hide();
             }
         );
-       
-        $('[data-rel="lightbox"]').lightbox();        
 
-        $("a.menu-toggle-btn").click(function() {
-            $(".responsive_menu").stop(true, true).slideToggle();
-            return false;
-        });
-
-        $(".responsive_menu a").click(function() {
-            $('.responsive_menu').hide();
-        });
-
+        $('[data-rel="lightbox"]').lightbox();
     }
 
-    jqels.loadMore.click(function() {
+    funcs.load = function() {
+        $.ajax('/image/load', {
+            dataType: 'json',
+            type: 'GET',
+            data: {
+                'imageMarker': jqels.imageMarker.val(),
+                'limit': vars.imageLimit
+            },
+            success: function(data) {
+                if (data.error) {
+                    console.log('加载图片出错：' + data.error);
+                } else {
+                    if ($.isArray(data.items)) {
+                        funcs.addImages(data.items);
+                        jqels.loadMore.prop('disabled', false);                        
+                    }
+                    if (data.marker) {
+                        jqels.imageMarker.val(data.marker);
+                        jqels.loadMore.html('加载更多');
+                    } else {
+                        jqels.imageMarker.val('');
+                        jqels.loadMore.html('没有更多图片了');
+                        jqels.loadMore.parent().animate({
+                            opacity:'0.1'
+                        },1000, function(){
+                            jqels.loadMore.parent().css({visibility: 'hidden'});
+                        });                   
+                    }
+                }
+
+
+            },
+            error: function(xhr, status, error) {
+                console.log('加载图片出错：' + (status != '' ? status : error));
+            }
+        });
+    };
+
+    funcs.loadMore = function() {
         jqels.loadMore.prop('disabled', true);
         jqels.loadMore.html('加载中...');
-        var items = [{
-            key: "image_o_197qi4mhln814pvh5ds7r1hl1a",
-            hash: "FtWFqaCw-W4ylq1JP8VVM95xTwz7",
-            fsize: 303567,
-            mimeType: "image/gif",
-            putTime: 14170985975693098
-        }, {
-            key: "image_o_197qi523dgvel71b4p1ldl190kg",
-            hash: "FtWFqaCw-W4ylq1JP8VVM95xTwz7",
-            fsize: 303567,
-            mimeType: "image/gif",
-            putTime: 14170990632791522
-        }];
-        funcs.addImages(items);
-        jqels.loadMore.prop('disabled', false);
-        jqels.loadMore.html('加载更多');
-    });
+        funcs.load();        
+    };
+
+    jqels.loadMore.click(funcs.loadMore);
+
+    funcs.loadMore();
 });

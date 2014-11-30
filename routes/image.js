@@ -10,11 +10,11 @@ var uptoken = new qiniu.rs.PutPolicy(config.Bucket_Name);
 /* 加载图片 */
 router.get('/load', function(req, res) {
     limit = req.param('limit');
+    marker = req.param('imageMarker');
     if (limit === undefined) {
         limit = 5;
-    }
-    var marker = req.session['image-marker'];
-    if (marker === undefined) {
+    }    
+    if (marker === undefined || marker == '') {
         marker = null;
     }
     
@@ -39,10 +39,6 @@ router.get('/uptoken', function(req, res, next) {
             uptoken: token
         });
     }
-});
-
-router.get('/list', function(req, res) {
-    res.send("image service - list");
 });
 
 module.exports = router;
